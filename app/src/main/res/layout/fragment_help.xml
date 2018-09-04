@@ -1,0 +1,20 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.example.pong.ui.HelpFragment">
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="none"
+        android:text="@string/helpText"
+        android:textAppearance="@android:style/TextAppearance.Material.Body1"
+        android:textIsSelectable="false" />
+
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="vibration"
+        android:title="@string/vibration" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="sound"
+        android:title="@string/sound" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="powerUps"
+        android:title="@string/powerUps" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="show_particles"
+        android:title="@string/showParticles" />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="show_shadows"
+        android:title="@string/showShadows" />
+    <ListPreference
+        android:defaultValue="5"
+        android:entries="@array/PossibleScores"
+        android:entryValues="@array/PossibleScores"
+        android:key="score_to_win"
+        android:summary="%s"
+        android:title="@string/scoreToWin" />
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/DifficultyEntries"
+        android:entryValues="@array/DifficultyValues"
+        android:key="single_player_difficulty"
+        android:summary="%s"
+        android:title="@string/singlePlayerDifficulty" />
+</PreferenceScreen>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">PONG!</string>
+    <string name="helpText">Spielprinzip\nZu Beginn besteht das Spielfeld aus einem Ball und zwei beweglichen Schlägern am oberen und unteren Rand. Man spielt entweder allein, wobei die Steuerung des oberen Schlägers vom Computer übernommen wird oder zusammen mit einem Freund, wobei jeder einen Schläger kontrolliert. Das Ziel ist es in beiden Fällen den Ball mithilfe des Schlägers zurück zu schlagen, damit dieser nicht den Bildschirmrand berührt. Trifft der Ball an die eigene Wand, bekommt der Gegner einen Punkt.\n\nSteuerung\nUm den Ball in Bewegung zu versetzen muss man lediglich auf den Bildschirm tippen. Die Schläger lassen sich durch Wischen mit dem Finger in der jeweiligen Bildschirmhälfte bewegen.\n\nBonusobjekte\nSofern diese Einstellung aktiviert ist, erscheinen zufällig Bonusobjekte auf dem Spielfeld, die mit dem Ball eingesammelt werden können. Dadurch wird zum Beispiel die Steuerung invertiert, man erhält einen Bonuspunkt oder es erscheint ein weiterer Ball.</string>
+    <string name="startGame">Spiel starten</string>
+    <string name="settings">Einstellungen</string>
+    <string name="singlePlayer">Einzelspieler</string>
+    <string name="multiPlayer">Mehrspieler</string>
+    <string name="help">Hilfe</string>
+    <string name="modeSelection">SPIELMODUS\nWÄHLEN</string>
+    <string name="score">Punktzahl</string>
+    <string name="endGameTitle">Spiel beenden?</string>
+    <string name="endGameDescription">Wollen Sie das Spiel wirklich beenden? Der aktuelle Spielstand geht dabei verloren.</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="finishedGame">ENDE</string>
+    <string name="newGame">Neues Spiel</string>
+    <string name="sound">Ton</string>
+    <string name="vibration">Vibration</string>
+    <string name="scoreToWin">Punkte für Sieg</string>
+    <string name="pause">PAUSE</string>
+    <string name="continueGame">Fortfahren</string>
+    <string name="end">Beenden</string>
+    <string name="powerUps">Bonusobjekte</string>
+    <string name="showParticles">Partikel anzeigen</string>
+    <string name="showShadows">Schatten anzeigen (experimentell)</string>
+    <string name="singlePlayerDifficulty">Schwierigkeit (Einzelspieler)</string>
+    <string name="easy">Einfach</string>
+    <string name="medium">Mittel</string>
+    <string name="hard">Schwer</string>
+    <string name="wonGame">GEWONNEN!</string>
+    <string name="lostGame">VERLOREN!</string>
+    <string name="about">ÜBER</string>
+    <string name="aboutText">Hier sollte ein total spannender Text über die Autoren stehen...</string>
+</resources>
