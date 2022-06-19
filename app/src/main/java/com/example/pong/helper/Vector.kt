@@ -1,8 +1,5 @@
 package com.example.pong.helper
 
-/**
- * Created by Lorenzo on 12.08.2017.
- */
 class Vector(var x : Float, var y : Float, var z : Float) {
     operator fun plus(vec2 : Vector) : Vector =
             Vector(this.x + vec2.x, this.y + vec2.y, this.y + vec2.y)

@@ -3,11 +3,6 @@ package com.example.pong.geometry
 import android.content.Context
 import com.example.pong.R
 
-
-/**
- * Created by lneumann on 01.08.17.
- */
-
 class Rectangle (context: Context, x : Float, y : Float, width : Float, height : Float, striped : Boolean) : Shape(context, x, y, width, height, -1) {
     init {
         this.color = floatArrayOf(0.0f, 0.0f, 0.0f, 1.0f)

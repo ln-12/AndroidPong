@@ -15,23 +15,20 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.TextView
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentActivity
 import com.example.pong.geometry.*
 import com.example.pong.helper.Collision
 import com.example.pong.helper.GLHelper
 import com.example.pong.helper.PowerUpKind
 import com.example.pong.helper.Vector
 import com.example.pong.ui.EndGameDialogFragment
+import java.security.AccessController.getContext
 import java.util.*
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
-import kotlin.collections.ArrayList
 import kotlin.concurrent.fixedRateTimer
 import kotlin.concurrent.thread
-
-
-/**
- * Created by lneumann on 01.08.17.
- */
 
 class GameGLRenderer (private val context: Context, private val gameMode : String) : GLSurfaceView.Renderer {
     // toggle if we need to pause the game
@@ -144,12 +141,12 @@ class GameGLRenderer (private val context: Context, private val gameMode : Strin
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         this.vibrationIsEnabled = sharedPref.getBoolean("vibration", true)
         this.soundIsEnabled = sharedPref.getBoolean("sound", true)
-        this.scoreToWin = sharedPref.getString("score_to_win", "5").toInt()
+        this.scoreToWin = sharedPref.getString("score_to_win", "5")!!.toInt()
         this.enablePowerUps = sharedPref.getBoolean("powerUps", true)
         this.showParticles = sharedPref.getBoolean("show_particles", true)
         this.showShadows = sharedPref.getBoolean("show_shadows", true)
 
-        val difficulty = sharedPref.getString("single_player_difficulty", "1").toInt()
+        val difficulty = sharedPref.getString("single_player_difficulty", "1")!!.toInt()
 
         when(difficulty){
             0 -> {
@@ -704,6 +701,7 @@ class GameGLRenderer (private val context: Context, private val gameMode : Strin
                             }
 
                             //else -> println("############ UNKNOWN POWERUP #############") // nothing to do
+                            PowerUpKind.NOT_SPECIFIED -> {}
                         }
 
                         iterator.remove()
@@ -876,11 +874,12 @@ class GameGLRenderer (private val context: Context, private val gameMode : Strin
             this.backgroundMusic.pause()
         }
 
-        (context as Activity).runOnUiThread {
+        val activity = context as FragmentActivity
 
+        activity.runOnUiThread {
 
-            val ft = context.fragmentManager.beginTransaction()
-            val prev = context.fragmentManager.findFragmentByTag("endGameDialog")
+            val ft = activity.supportFragmentManager.beginTransaction()
+            val prev = activity.supportFragmentManager.findFragmentByTag("endGameDialog")
             if (prev == null) {
                 ft.addToBackStack(null)
 

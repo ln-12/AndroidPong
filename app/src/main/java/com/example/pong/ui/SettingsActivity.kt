@@ -1,14 +1,10 @@
 package com.example.pong.ui
 
 import android.os.Bundle
+import android.preference.PreferenceActivity
 import com.example.pong.R
-import android.preference.*
 
-
-class SettingsActivity : PreferenceActivity() {
-
-    // TODO change font for settings
-
+class SettingsActivity: PreferenceActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

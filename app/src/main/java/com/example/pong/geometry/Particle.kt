@@ -3,10 +3,6 @@ package com.example.pong.geometry
 import android.content.Context
 import android.opengl.GLES30
 
-/**
- * Created by Lorenzo on 12.08.2017.
- */
-
 class Particle (context: Context, x : Float, y : Float, radius : Float) : Shape(context, x, y, radius, radius, -1) {
     companion object {
         private var vertexBufferObject = intArrayOf(-1)

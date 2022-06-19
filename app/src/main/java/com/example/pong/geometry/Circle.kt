@@ -2,10 +2,6 @@ package com.example.pong.geometry
 
 import android.content.Context
 
-/**
- * Created by lneumann on 01.08.17.
- */
-
 class Circle(context: Context, x : Float, y : Float, radius : Float) : Shape(context, x, y, radius, radius, -1) {
     init {
         val n = 20

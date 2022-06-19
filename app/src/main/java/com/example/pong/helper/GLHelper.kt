@@ -7,10 +7,6 @@ import android.opengl.GLUtils
 import android.util.Log
 import com.example.pong.GameGLRenderer
 
-/**
- * Created by lneumann on 29.10.17.
- */
-
 class GLHelper {
     class ProgramHandles {
         var programHandle: Int = -1

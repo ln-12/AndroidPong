@@ -1,7 +1,5 @@
 package com.example.pong.ui
 
-import android.app.DialogFragment
-import android.app.FragmentTransaction
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.pong.R
 
 class EndGameDialogFragment() : DialogFragment() {
@@ -42,7 +42,7 @@ class EndGameDialogFragment() : DialogFragment() {
         headingTextView.text = this.headingText
 
         // set a custom retro font
-        val customFont = Typeface.createFromAsset(activity.assets, MainActivity.FONT_NAME)
+        val customFont = Typeface.createFromAsset(activity!!.assets, MainActivity.FONT_NAME)
 
         headingTextView.typeface = customFont
         newGameButton.typeface = customFont

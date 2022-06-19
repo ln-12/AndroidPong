@@ -1,18 +1,14 @@
 package com.example.pong.ui
 
-import android.app.Activity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import androidx.fragment.app.FragmentActivity
 import com.example.pong.R
-
-/**
- * Created by lneumann on 01.08.17.
- */
 
 // this class is the main class of our app
 // here we start by loading the main menu layout (an empty frame layout) and adding the actual menu layout
 
-class MainActivity : Activity() {
+class MainActivity : FragmentActivity() {
     companion object {
         val FONT_NAME = "fonts/wendy.ttf"
     }
@@ -27,7 +23,7 @@ class MainActivity : Activity() {
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
 
         // load fragment into container
-        fragmentManager.beginTransaction().add(R.id.fragment_container, MainMenuFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, MainMenuFragment())
             .commit()
     }
 }

@@ -5,10 +5,6 @@ import android.opengl.GLSurfaceView
 import android.view.MotionEvent
 import com.example.pong.GameGLRenderer
 
-/**
- * Created by lneumann on 01.08.17.
- */
-
 internal class GameGLSurfaceView(context: Context, gameMode : String) : GLSurfaceView(context) {
     private val mRenderer: GameGLRenderer
 

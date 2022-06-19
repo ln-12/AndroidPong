@@ -4,10 +4,6 @@ import android.content.Context
 import com.example.pong.helper.PowerUpKind
 import com.example.pong.R
 
-/**
- * Created by Lorenzo on 21.08.2017.
- */
-
 class PowerUp(context: Context, x : Float, y : Float, radius : Float, val powerUpKind : PowerUpKind, textureIndex : Int) : Shape(context, x, y, radius, radius, textureIndex) {
     // life time in seconds
     var life : Float = 7.5f

@@ -4,9 +4,6 @@ import android.content.Context
 import android.opengl.GLES30
 import com.example.pong.R
 
-/**
- * Created by vaterj on 10.10.17.
- */
 class LightPolygon (context : Context, x : Float, y : Float, lightX : Float, lightY : Float, vertexX1 : Float, vertexY1 : Float, vertexX2 : Float, vertexY2 : Float, vertexX3 : Float, vertexY3 : Float,  vertexX4 : Float, vertexY4 : Float, lowerShadowTrapeze : ShadowTrapeze, upperShadowTrapeze: ShadowTrapeze, textureIndex : Int) : Shape(context, x, y, 1.0f, 2.0f, textureIndex) {
     init {
         this.color = floatArrayOf(1.0f, 1.0f, 1.0f, 1.0f)

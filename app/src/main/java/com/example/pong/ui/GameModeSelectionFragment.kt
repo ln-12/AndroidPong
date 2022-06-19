@@ -1,6 +1,5 @@
 package com.example.pong.ui
 
-import android.app.Fragment
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.pong.R
 
-class GameModeSelectionFragment : Fragment() {
+class GameModeSelectionFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // load layout
@@ -25,7 +25,7 @@ class GameModeSelectionFragment : Fragment() {
             singlePlayerButton.isEnabled = false
 
             // pop the game mode selection from the back stack to return to the main menu when leaving the game
-            fragmentManager.popBackStack()
+            fragmentManager!!.popBackStack()
 
             val intent = Intent(activity, GameActivity::class.java)
             intent.putExtra("GAME_MODE", "SINGLE_PLAYER")
@@ -37,7 +37,7 @@ class GameModeSelectionFragment : Fragment() {
         multiPlayerButton?.setOnClickListener {
             multiPlayerButton.isEnabled = false
 
-            fragmentManager.popBackStack()
+            fragmentManager!!.popBackStack()
 
             val intent = Intent(activity, GameActivity::class.java)
             intent.putExtra("GAME_MODE", "MULTI_PLAYER")
@@ -47,7 +47,7 @@ class GameModeSelectionFragment : Fragment() {
         val gameModeTextView = view.findViewById<TextView>(R.id.gameModeTextView)
 
         // set a custom retro font
-        val customFont = Typeface.createFromAsset(activity.assets, MainActivity.FONT_NAME)
+        val customFont = Typeface.createFromAsset(activity!!.assets, MainActivity.FONT_NAME)
 
         singlePlayerButton.typeface = customFont
         multiPlayerButton.typeface = customFont

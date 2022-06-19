@@ -1,9 +1,5 @@
 package com.example.pong.helper
 
-/**
- * Created by lneumann on 01.08.17.
- */
-
 // we only need this class to check if we can satisfy our need for 60 fps
 /*
 class FpsCounter {

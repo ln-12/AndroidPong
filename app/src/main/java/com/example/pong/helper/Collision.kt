@@ -6,10 +6,6 @@ import com.example.pong.geometry.Rectangle
 import com.example.pong.geometry.Shape
 import java.util.*
 
-/**
- * Created by Lorenzo on 07.08.2017.
- */
-
 class Collision {
     data class Info(val didCollide : Boolean, var direction: Shape.Direction, val length : FloatArray) {
         override fun equals(other: Any?): Boolean {

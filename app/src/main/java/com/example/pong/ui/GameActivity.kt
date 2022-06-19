@@ -1,16 +1,12 @@
 package com.example.pong.ui
 
-import android.app.Activity
 import android.os.Bundle
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.pong.R
 import android.graphics.Typeface
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 
-
-
-
-class GameActivity : Activity() {
+class GameActivity : FragmentActivity() {
     // the view where the OpenGL content is drawn on
     private var mGLView: GameGLSurfaceView? = null
 
@@ -18,10 +14,9 @@ class GameActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         // get game mode from previous activity
-        val gameMode: String
-        gameMode = if (savedInstanceState == null) {
+        val gameMode: String = if (savedInstanceState == null) {
             val extras = intent.extras
-            extras.getString("GAME_MODE")
+            extras!!.getString("GAME_MODE")!!
         } else {
             savedInstanceState.getSerializable("GAME_MODE") as String
         }
@@ -51,8 +46,8 @@ class GameActivity : Activity() {
     }
 
     override fun onResume() {
-        val ft = fragmentManager.beginTransaction()
-        /*val prev = fragmentManager.findFragmentByTag("pauseDialog")
+        val ft = supportFragmentManager.beginTransaction()
+        /*val prev = supportFragmentManager.findFragmentByTag("pauseDialog")
         if (prev != null) {
             ft.remove(prev)
         }*/
@@ -69,8 +64,8 @@ class GameActivity : Activity() {
             this.mGLView?.onPause()
         }
 
-        val ft = fragmentManager.beginTransaction()
-        val prev = fragmentManager.findFragmentByTag("pauseDialog")
+        val ft = supportFragmentManager.beginTransaction()
+        val prev = supportFragmentManager.findFragmentByTag("pauseDialog")
         if (prev == null) {
             ft.addToBackStack(null)
 

@@ -1,6 +1,5 @@
 package com.example.pong.ui
 
-import android.app.Fragment
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.pong.R
 
-class MainMenuFragment : Fragment() {
+class MainMenuFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main_menu, container, false)
@@ -20,7 +20,7 @@ class MainMenuFragment : Fragment() {
         val startGameButton = view.findViewById<Button>(R.id.startGameButton)
         startGameButton?.setOnClickListener {
             startGameButton.isEnabled = false
-            fragmentManager.beginTransaction()
+            fragmentManager!!.beginTransaction()
                 .replace(R.id.fragment_container, GameModeSelectionFragment())
                 .addToBackStack(null)
                 .commit()
@@ -31,7 +31,7 @@ class MainMenuFragment : Fragment() {
             showSettingsButton.isEnabled = false
 
             /*
-            fragmentManager.beginTransaction()
+            supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, SettingsActivity())
                     .addToBackStack(null)
                     .commit()
@@ -44,7 +44,7 @@ class MainMenuFragment : Fragment() {
         showHelpButton?.setOnClickListener {
             showHelpButton.isEnabled = false
 
-            fragmentManager.beginTransaction()
+            fragmentManager!!.beginTransaction()
                     .replace(R.id.fragment_container, HelpFragment())
                     .addToBackStack(null)
                     .commit()
@@ -54,7 +54,7 @@ class MainMenuFragment : Fragment() {
         showAboutButton?.setOnClickListener {
             showAboutButton.isEnabled = false
 
-            fragmentManager.beginTransaction()
+            fragmentManager!!.beginTransaction()
                     .replace(R.id.fragment_container, AboutFragment())
                     .addToBackStack(null)
                     .commit()
@@ -63,7 +63,7 @@ class MainMenuFragment : Fragment() {
         val nameTextView = view.findViewById<TextView>(R.id.nameTextView)
 
         // set a custom retro font
-        val customFont = Typeface.createFromAsset(activity.assets, MainActivity.FONT_NAME)
+        val customFont = Typeface.createFromAsset(activity!!.assets, MainActivity.FONT_NAME)
 
         startGameButton.typeface = customFont
         showSettingsButton.typeface = customFont

@@ -2,9 +2,6 @@ package com.example.pong.geometry
 
 import android.content.Context
 
-/**
- * Created by vaterj on 28.09.17.
- */
 class ShadowTrapeze (context : Context, x : Float, y : Float, vertexX1 : Float, vertexY1 : Float, vertexX2 : Float, vertexY2 : Float, vertexX3 : Float, vertexY3 : Float, vertexX4 : Float, vertexY4 : Float, textureIndex : Int) : Shape(context, x, y, 1.0f, 2.0f, textureIndex) {
     init {
         //this.fragmentShader = R.raw.fragment_texture
